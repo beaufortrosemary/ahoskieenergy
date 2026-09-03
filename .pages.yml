@@ -1,0 +1,77 @@
+media:
+  input: downloads/press
+  output: downloads/press
+
+content:
+  - name: news
+    label: News
+    type: file
+    path: news/news.json
+    # Lock the file so editors cannot delete or rename it from the CMS;
+    # they can still add, edit, and remove individual news items.
+    operations:
+      delete: false
+      rename: false
+    fields:
+      - name: items
+        label: News items
+        type: object
+        list:
+          collapsible:
+            summary: "{date} — {title}"
+        fields:
+          - name: published
+            label: Published (ON = live on the website · OFF = hidden draft)
+            type: boolean
+            default: true
+            description: >-
+              Leave this ON to publish the item on the public website.
+              Switch it OFF to save your work as a hidden draft that is
+              not shown on the site. New items are published by default.
+          - name: date
+            label: Date
+            type: date
+            options:
+              format: yyyy-MM-dd
+          - name: category
+            label: Category
+            type: select
+            options:
+              values:
+                - Press release
+                - Permit filing
+                - Report or study
+                - Community meeting
+                - In the news
+          - name: title
+            label: Title
+            type: string
+            required: true
+          - name: summary
+            label: Summary
+            type: text
+            required: true
+          - name: link_type
+            label: Link type
+            type: select
+            default: pdf
+            options:
+              values:
+                - { label: PDF file, value: pdf }
+                - { label: Link to another website, value: external }
+          - name: url
+            label: PDF file
+            type: file
+            options:
+              extensions: [pdf]
+            description: >-
+              Click here and upload the PDF. It is stored in
+              downloads/press/ automatically. Leave this empty for an
+              external link and fill in the Website link below instead.
+          - name: external_url
+            label: Website link
+            type: string
+            pattern: "^(https://.*)?$"
+            description: >-
+              Only for "Link to another website" items. Paste the full
+              address, starting with https. Leave empty for PDF items.

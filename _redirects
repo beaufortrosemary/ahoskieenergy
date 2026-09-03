@@ -1,0 +1,7 @@
+# Friendly shortcut for editors.
+# ahoskieenergy.com/admin -> the Pages CMS editor for this repo, where
+# the newsroom editor adds and edits news items. Update the target URL below if the
+# Pages CMS address is different (copy it from the browser address bar
+# while viewing the newsroom in Pages CMS).
+/admin    https://app.pagescms.org/beaufortrosemary/ahoskieenergy/main/file/news    302
+/admin/*  https://app.pagescms.org/beaufortrosemary/ahoskieenergy/main/file/news    302
