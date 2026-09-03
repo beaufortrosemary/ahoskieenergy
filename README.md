@@ -18,11 +18,11 @@ Static site for ahoskieenergy.com. It is a sister site to bethuneenergy.com and 
 | `news/news.json` | Newsroom data |
 | `.pages.yml` | Pages CMS configuration (News editor and the PDF media library) |
 | `_redirects` | Netlify redirects (`/admin` shortcut to the Pages CMS editor) |
-| `downloads/ahoskie-energy-faq.pdf` | Printable FAQ, linked from `faq.html` (to be added) |
+| `downloads/ahoskie-energy-faq.pdf` | Printable FAQ, linked from `faq.html`. Regenerate it when `faq.html` changes (see below) |
 | `downloads/press/` | Press release PDFs uploaded through Pages CMS |
 | `og-image.jpg`, `favicon*`, `apple-touch-icon.png` | Social preview image and icons |
 
-Project-specific facts (capacity, target year, site location, acreage, and so on) are marked with `[square brackets]` in the HTML until the real content is dropped in. `CONTENT.md` lists every placeholder.
+`CONTENT.md` records where each project fact lives on the site and the few items still open (photography, the info@ mailbox).
 
 ## One-time setup
 
@@ -99,7 +99,8 @@ and open http://localhost:8000. (Opening `index.html` straight from the file sys
 
 ## Notes
 
-- `news/news.json` currently holds a single clearly labeled DEMO item with a working sample PDF (`downloads/press/demo-news-item.pdf`), there so you can test the layout and the Download PDF button. Delete it (and its PDF) before launch, then add the real releases.
+- `news/news.json` launches empty (`{ "items": [] }`), so the newsroom shows "No announcements have been posted yet." until the first item is added.
 - If every item is removed, the newsroom simply shows "No announcements have been posted yet." An empty or `{ "items": [] }` file is handled gracefully.
 - Category options live in `.pages.yml` (the News editor). The site itself renders whatever category string an entry carries.
-- The two photos in `images/trial/` are the same stock pine photos used on bethuneenergy.com. Swap them for Ahoskie site photos when available (keep roughly a 2:1 aspect ratio, 1800px wide is plenty).
+- The two photos in `images/trial/` are the same stock pine photos used on bethuneenergy.com. Swap them for Ahoskie imagery when available (keep roughly a 2:1 aspect ratio, 1800px wide is plenty).
+- The printable FAQ PDF is generated from the FAQ page content. To regenerate it after editing `faq.html`, print `faq.html` to PDF from a browser (Letter size) and save it as `downloads/ahoskie-energy-faq.pdf`, or ask for it to be regenerated.

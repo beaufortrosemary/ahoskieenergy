@@ -255,6 +255,15 @@ main .prose { max-width: 46em; }
 .faq-item { margin-top: 2rem; max-width: 46em; }
 .faq-item h3 { font-size: 1.45rem; margin-bottom: 0.5rem; }
 
+.faq-list { margin: 0.8rem 0 0 1.3rem; }
+.faq-list li + li { margin-top: 0.6rem; }
+.faq-list b { color: var(--heading); }
+
+.notice { background: var(--wash); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+.notice .wrap { padding-top: 1rem; padding-bottom: 1rem; }
+.notice p { color: var(--soft); font-size: 0.95rem; max-width: 52em; }
+.notice b { color: var(--heading); font-weight: 600; }
+
 .download-box {
   margin-top: 2.6rem;
   border: 1px solid var(--line);
