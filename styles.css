@@ -138,6 +138,9 @@ textarea:focus-visible {
   font-size: 1.12rem;
 }
 
+.hero.compact { padding: 3.2rem 0 2.4rem; }
+.hero.compact h1 { font-size: 2.6rem; }
+
 .hero .actions {
   margin-top: 2.1rem;
   display: flex;
@@ -212,11 +215,16 @@ textarea:focus-visible {
 /* Sections */
 main section { padding: 3.6rem 0; }
 main section + section { border-top: 1px solid var(--line); }
+main section.tight-top { padding-top: 0.5rem; }
 
 main h2 { font-size: 2.05rem; margin-bottom: 1.1rem; }
 main .section-kicker { margin-bottom: 0.4rem; }
 main p + p { margin-top: 1rem; }
 main .prose { max-width: 46em; }
+main .prose h2 + p + h2,
+main .prose p + h2 { margin-top: 2.2rem; }
+main .updated { margin-top: 2.2rem; color: var(--soft); font-size: 0.9rem; }
+.cta { margin-top: 1.6rem; }
 
 /* Commitment cards */
 .commitments {
@@ -344,21 +352,32 @@ form .button { margin-top: 1.4rem; }
 
 .footer-legal a { color: #ffffff; }
 
-.footer-legal {
+.site-footer .footer-legal {
   border-top: 1px solid rgba(255, 255, 255, 0.14);
   padding-top: 1rem;
   padding-bottom: 1.4rem;
   font-size: 0.8rem;
   color: #8fa9b5;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: baseline;
+  gap: 0.3rem 0.6rem;
 }
 
+.footer-legal a::before {
+  content: "\00b7";
+  display: inline-block;
+  margin-right: 0.6rem;
+  color: #8fa9b5;
+  text-decoration: none;
+}
 
 
 @media (max-width: 600px) {
   .hero { padding: 3rem 0 2.6rem; }
-  .nowrap { white-space: nowrap; }
-
-.hero h1 { font-size: 2.15rem; }
+  .hero h1 { font-size: 2.15rem; }
+  .hero.compact h1 { font-size: 2rem; }
   main h2 { font-size: 1.7rem; }
   .site-nav { gap: 1.2rem; }
 }
@@ -366,6 +385,7 @@ form .button { margin-top: 1.4rem; }
 /* Newsroom */
 
 .news-list { margin-top: 1.4rem; }
+.news-list.flush { margin-top: 0; }
 
 .news-row {
   border-top: 1px solid var(--line);
@@ -428,6 +448,7 @@ form .button { margin-top: 1.4rem; }
 
 .media-box h2 { font-size: 1.55rem; margin-bottom: 0.5rem; }
 .media-box p { color: var(--soft); }
+.media-box p + p { margin-top: 0.6rem; }
 
 @media (max-width: 640px) {
   .news-row { grid-template-columns: 1fr; gap: 0.4rem; }

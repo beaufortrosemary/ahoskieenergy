@@ -18,6 +18,8 @@ Static site for ahoskieenergy.com. It is a sister site to bethuneenergy.com and 
 | `news/news.json` | Newsroom data |
 | `.pages.yml` | Pages CMS configuration (News editor and the PDF media library) |
 | `_redirects` | Netlify redirects (`/admin` shortcut to the Pages CMS editor) |
+| `_headers` | Security headers Netlify adds to every response |
+| `robots.txt`, `sitemap.xml` | Search engine hints. Add a line to `sitemap.xml` if a new public page is created |
 | `downloads/ahoskie-energy-faq.pdf` | Printable FAQ, linked from `faq.html`. Regenerate it when `faq.html` changes (see below) |
 | `downloads/press/` | Press release PDFs uploaded through Pages CMS |
 | `og-image.jpg`, `favicon*`, `apple-touch-icon.png` | Social preview image and icons |
