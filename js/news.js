@@ -9,7 +9,8 @@
     "July", "August", "September", "October", "November", "December"];
 
   function formatDate(iso) {
-    var p = iso.split("-");
+    if (!iso) return "";
+    var p = String(iso).split("-");
     if (p.length !== 3) return iso;
     return MONTHS[parseInt(p[1], 10) - 1] + " " + parseInt(p[2], 10) + ", " + p[0];
   }
@@ -24,35 +25,43 @@
   function renderRow(item, showSummary) {
     var row = el("div", "news-row");
 
+    // An item saved without a PDF or web address still renders, just
+    // without a link, instead of pointing at a broken address.
     var href = (item.link_type === "external" && item.external_url)
-      ? item.external_url : item.url;
+      ? item.external_url : (item.url || "");
 
     var left = el("div", "news-date");
     left.appendChild(el("span", null, formatDate(item.date)));
-    left.appendChild(el("span", "news-tag", item.category));
+    if (item.category) left.appendChild(el("span", "news-tag", item.category));
     row.appendChild(left);
 
     var body = el("div");
     var h3 = el("h3");
-    var titleLink = el("a", null, item.title);
-    titleLink.href = href;
-    titleLink.target = "_blank";
-    titleLink.rel = "noopener";
-    h3.appendChild(titleLink);
+    if (href) {
+      var titleLink = el("a", null, item.title || "Untitled");
+      titleLink.href = href;
+      titleLink.target = "_blank";
+      titleLink.rel = "noopener";
+      h3.appendChild(titleLink);
+    } else {
+      h3.textContent = item.title || "Untitled";
+    }
     body.appendChild(h3);
 
     if (showSummary && item.summary) {
       body.appendChild(el("p", null, item.summary));
     }
 
-    var links = el("div", "news-links");
-    var action = el("a", null,
-      item.link_type === "external" ? "See the story" : "Download PDF");
-    action.href = href;
-    action.target = "_blank";
-    action.rel = "noopener";
-    links.appendChild(action);
-    body.appendChild(links);
+    if (href) {
+      var links = el("div", "news-links");
+      var action = el("a", null,
+        item.link_type === "external" ? "See the story" : "Download PDF");
+      action.href = href;
+      action.target = "_blank";
+      action.rel = "noopener";
+      links.appendChild(action);
+      body.appendChild(links);
+    }
 
     row.appendChild(body);
     return row;
@@ -85,7 +94,7 @@
       var items = (data.items || []).filter(function (item) {
         return item.published !== false;
       }).sort(function (a, b) {
-        return a.date < b.date ? 1 : -1;
+        return (a.date || "") < (b.date || "") ? 1 : -1;
       });
       renderInto("news-latest", items, 3, true);
       renderInto("news-all", items, 0, true);
