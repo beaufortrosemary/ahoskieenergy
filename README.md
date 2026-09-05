@@ -104,5 +104,5 @@ and open http://localhost:8000. (Opening `index.html` straight from the file sys
 - `news/news.json` launches empty (`{ "items": [] }`), so the newsroom shows "No announcements have been posted yet." until the first item is added.
 - If every item is removed, the newsroom simply shows "No announcements have been posted yet." An empty or `{ "items": [] }` file is handled gracefully.
 - Category options live in `.pages.yml` (the News editor). The site itself renders whatever category string an entry carries.
-- The two home page photos in `images/` are Adobe Stock comps (watermarked previews). Replace them with the licensed downloads under the same filenames; see `CONTENT.md` for the asset numbers. Keep roughly a 2:1 aspect ratio, 1800px wide is plenty.
+- The two home page photos in `images/` are licensed Adobe Stock images cropped to 1800 x 900; see `CONTENT.md` for the asset numbers. To swap a photo, save a new 2:1 JPEG over the same filename.
 - The printable FAQ PDF is generated from the FAQ page content. To regenerate it after editing `faq.html`, print `faq.html` to PDF from a browser (Letter size) and save it as `downloads/ahoskie-energy-faq.pdf`, or ask for it to be regenerated.
