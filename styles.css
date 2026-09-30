@@ -267,11 +267,6 @@ main .updated { margin-top: 2.2rem; color: var(--soft); font-size: 0.9rem; }
 .faq-list li + li { margin-top: 0.6rem; }
 .faq-list b { color: var(--heading); }
 
-.notice { background: var(--wash); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
-.notice .wrap { padding-top: 1rem; padding-bottom: 1rem; }
-.notice p { color: var(--soft); font-size: 0.95rem; max-width: 52em; }
-.notice b { color: var(--heading); font-weight: 600; }
-
 .download-box {
   margin-top: 2.6rem;
   border: 1px solid var(--line);
