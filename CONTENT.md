@@ -5,7 +5,7 @@ All of the project content supplied for launch is in place. This file tracks the
 ## Open items
 
 - **Home page headline.** Currently "Reliable energy for a growing North Carolina" (the Bethune pattern). Change the `<h1>` in `index.html` if a different headline is wanted.
-- **Photography.** Done. The home page uses the licensed Adobe Stock files: `images/hero-pine-cone.jpg` (hero band, asset 422656583) and `images/feature-tall-pines.jpg` (feature photo, asset 1712976226), each cropped to 1800 x 900 for the web. `og-image.jpg` (1200 x 630) is still the stock pine seedling used on bethuneenergy.com and can be swapped if desired.
+- **Photography.** Done. The home page uses the licensed Adobe Stock files: `images/hero-pine-cone.jpg` (hero band, asset 422656583) and `images/feature-tall-pines.jpg` (feature photo, asset 1712976226), each cropped to 1800 x 900 for the web. `og-image.jpg` (1200 x 630), the social preview, is cropped from the licensed pine cone.
 - **info@ahoskieenergy.com mailbox.** Create the mailbox with the same email provider used for info@bethuneenergy.com so replies can be sent from that address, and forward it as needed. The address is already used on every page.
 - **Utilities or offtake partners.** None are named yet. When one can be announced, the newsroom is the natural place.
 

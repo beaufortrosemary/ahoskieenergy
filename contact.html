@@ -86,7 +86,7 @@
           <textarea id="message" name="message" maxlength="300" required></textarea>
           <div class="char-count" aria-live="polite"><span id="char-used">0</span>/300 characters</div>
         </div>
-        <button class="button" type="submit">Send Message</button>
+        <button class="button" type="submit" id="send">Send Message</button>
       </form>
     </div>
   </section>
@@ -110,6 +110,11 @@
   var msg = document.getElementById('message');
   var used = document.getElementById('char-used');
   msg.addEventListener('input', function () { used.textContent = msg.value.length; });
+  document.querySelector('form[name="contact"]').addEventListener('submit', function () {
+    var btn = document.getElementById('send');
+    btn.disabled = true;
+    btn.textContent = 'Sending\u2026';
+  });
 </script>
 
 </body>

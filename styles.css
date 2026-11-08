@@ -433,6 +433,8 @@ form .button { margin-top: 1.4rem; }
 }
 
 .news-empty { color: var(--soft); border-top: 1px solid var(--line); padding-top: 1.2rem; }
+.news-loading { border-top: 0; }
+.button:disabled { opacity: 0.6; cursor: wait; }
 
 .media-box {
   margin-top: 2.8rem;
